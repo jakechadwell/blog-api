@@ -25,14 +25,14 @@ jobs:
 
       - name: Build with Maven
         run: |
-          cd spring-boot-rest-api
+          cd springboot-blog-rest-api
           mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: '${{ github.workspace }}/springboot-blog-rest-api/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
